@@ -1,7 +1,2 @@
 target
-list
-complex
-format
-literals
-tuples
-slice
+*

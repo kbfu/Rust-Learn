@@ -78,5 +78,5 @@ fn main() {
     println!("Area of rectangle: {:?}", rect_area(rectangle));
 
     // 根据左下角的点的坐标和边长返回正方形右上角点的坐标
-    println!("Left corner point: {}", square(Point {x: 5.0, y: 5.0}, 3.0));
+    println!("{}", square(Point {x: 5.0, y: 5.0}, 3.0));
 }
