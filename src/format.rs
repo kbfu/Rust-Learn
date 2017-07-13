@@ -1,4 +1,4 @@
-// TODO answer for https://rustwiki.org/rust-by-example/hello/print/fmt.html
+// answer for https://rustwiki.org/rust-by-example/hello/print/fmt.html
 use std::fmt;
 
 struct City {
@@ -29,6 +29,16 @@ struct Color {
     blue: u8,
 }
 
+impl fmt::Display for Color {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f,
+               "RGB ({0}, {1}, {2}) 0x{0:02x}{1:02x}{2:02x}",
+               self.red,
+               self.green,
+               self.blue)
+    }
+}
+
 fn main() {
     for city in [City {
                      name: "Dublin",
@@ -57,13 +67,22 @@ fn main() {
                       red: 0,
                       green: 3,
                       blue: 254,
-                  },
+                  }, 
                   Color {
                       red: 0,
-                      green: 0,
+                      green: 0, 
                       blue: 0,
                   }]
                 .iter() {
         println!("{:?}", *color)
+    }
+    for color in [Color 
+                {red: 128, green: 255, blue: 90},
+                Color 
+                {red: 0, green: 3, blue: 254}, 
+                Color
+                {red:0, green: 0, blue: 0}
+                ].iter() {
+        println!("{:}", *color);
     }
 }
