@@ -1,2 +1,3 @@
 target
-linked_list
+linked_list/target/
+**/*.rs.bk
